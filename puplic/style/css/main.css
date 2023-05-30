@@ -1,0 +1,414 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Globel varbel */
+:root {
+    --blackColor: rgb(22, 20, 20);
+    --whiteColor: rgb(255, 255, 255);
+    --grayColer: #b3b0b0e0;
+    --goldColor: rgb(255, 202, 28);
+    --redColor: rgb(0, 174, 255);
+    --fullwidth: 100%;
+    --opictyVal: 0.8;
+}
+
+body {
+    background-color: rgb(238, 232, 232)
+}
+
+/*========================start all nav bar contact==============================*/
+nav {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 1;
+    background-color: var(--blackColor);
+}
+
+div.main-nav {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    background-color: var(--blackColor);
+    overflow: hidden;
+    padding: 16px;
+    margin: auto;
+}
+
+/* brand contnet */
+.brand {
+    margin: unset;
+    color: var(--goldColor);
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bold;
+    padding: 0px 24px;
+
+}
+
+/* list of links to nav scrooling in page */
+.navigator-in-page {
+    flex-direction: row;
+    display: flex;
+    flex: 15px;
+    list-style: none;
+    margin: 0px;
+
+}
+
+.nav-link {
+    text-decoration: none;
+    padding: inherit;
+    color: var(--grayColer);
+    transition: 500ms;
+    padding: 0px 14px;
+
+}
+
+.nav-link:hover {
+    color: var(--goldColor);
+}
+
+/* list auth */
+ul.list-auth {
+    flex-direction: row;
+    display: flex;
+    flex: 15px;
+    list-style: none;
+    position: absolute;
+    right: 12%;
+    margin: 10px;
+}
+
+a.auth-link {
+    text-decoration: none;
+    padding: inherit;
+    color: var(--grayColer);
+    transition: 500ms;
+    padding: 0px 8px;
+}
+
+a.auth-link:hover {
+    color: var(--goldColor);
+}
+
+/* drop Button languges whith his contact*/
+
+div.nav-dropdown {
+    position: absolute;
+    right: 30px;
+}
+
+div.nav-dropdown:hover .dropbtn {
+    color: var(--goldColor)
+}
+
+.dropbtn {
+    font-size: 18px;
+    text-align: center;
+    background-color: inherit;
+    font-family: inherit;
+    color: var(--grayColer);
+    border: none;
+    outline: none;
+    margin: 0;
+    transition: 500ms;
+}
+
+
+.fa-globe {
+    color: var(--grayColer);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 15%;
+    background-color: var(--blackColor);
+    min-width: 135px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.nav-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    float: none;
+    color: var(--grayColer);
+    font-size: 16px;
+    border-bottom: solid 0px transparent;
+    padding: 10px 8px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    transition: 400ms;
+}
+
+.dropdown-content a:hover {
+    color: var(--goldColor);
+    padding-left: 16px;
+    border-bottom: solid 1px var(--goldColor);
+}
+
+/* dropDown  include all buttons in navBar for tablet and phones */
+.nav-dropDonw-responsev {
+    display: none;
+    background-color: var(--redColor);
+    position: absolute;
+    z-index: 1;
+    text-align: left;
+    top: 62px;
+    right: 0px;
+    left: 0px;
+    width: 100vw;
+    transition: 400ms;
+}
+
+.icon-bars {
+    border: none;
+    background-color: var(--blackColor);
+    border-radius: 5px;
+    transition: 400ms;
+    overflow: hidden;
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    margin: 8px 20px;
+}
+
+.icon-bars:hover {
+    background-color: var(--goldColor);
+}
+
+.fa-bars {
+    font-weight: 900;
+    color: var(--goldColor);
+    margin: 0px;
+    font-size: 18px;
+    padding: 8px;
+    transition: 400ms;
+}
+
+.fa-bars:hover {
+    color: var(--blackColor);
+    padding: 9px;
+
+}
+
+.nav-dropDonw-responsev-content {
+    display: none;
+    position: fixed;
+    background-color: var(--blackColor);
+    width: 100vw;
+}
+
+.nav-dD-rv-ct-link {
+    display: block;
+    text-decoration: none;
+    color: var(--grayColer);
+    transition: 500ms;
+    padding: 4px 16px;
+}
+
+.nav-dD-rv-ct-link:hover {
+    display: block;
+    text-decoration: none;
+    color: var(--goldColor);
+    padding: 4px 18px;
+}
+
+.nav--span-dropDonw {
+
+    border-top: 1.5px solid var(--goldColor);
+    height: 3px;
+    width: 100vw;
+    display: block;
+    margin: 4px 0px;
+}
+
+
+.btn-lan-rv {
+    background-color: inherit;
+    border: none;
+    color: aliceblue;
+    padding: 9px;
+    transition: 400ms;
+    margin: 4px 8px;
+}
+
+.btn-lan-rv:hover {
+    color: var(--goldColor);
+    padding: 9px 12px;
+    display: block;
+}
+
+.lan-contant-rv {
+    background-color: var(--blackColor);
+    display: none;
+    position: absolute;
+    width: 120px;
+    z-index: 1;
+    top: 85%;
+    left: 25px;
+}
+
+.div-btn-lan-rv {
+    position: relative;
+
+}
+
+.div-btn-lan-rv:hover .lan-contant-rv {
+    display: block;
+}
+
+
+/* =========================================cStart ustom Carousel=============================== */
+
+.mycarousel-img {
+    margin: 30px 0px;
+    height: 500px;
+    overflow: hidden;
+    object-fit: fill;
+    opacity: var(--opictyVal);
+    transition: 400ms;
+}
+
+
+.mycarousel-h3 {
+    color: var(--redColor);
+    transition: 400ms;
+}
+
+.mycarousel-p {
+    color: var(--blackColor);
+    font-weight: bold;
+    transition: 400ms;
+}
+
+
+/* ========================================== data card ====================================== */
+
+.mainContanerAllReal {
+    background-color: var(--goldColor);
+    margin-top: 35px;
+    margin-bottom: 35px;
+    border-radius: 12px;
+}
+
+.mainContanerAllReal h1 {
+    color: var(--redColor);
+    text-align: center;
+    margin-bottom: 8px;
+    border-bottom: 2px solid var(--goldColor);
+}
+
+.data-container {
+    width: 100%;
+    margin: 16px 0px;
+    padding: 8px;
+    background-color: var(--whiteColor);
+    border-radius: 12px;
+    box-shadow: 10px 10px 8px #888888;
+    transition: 500ms;
+}
+
+.data-container:hover {
+    width: calc(102%);
+    background-color: #d2d2d2;
+    box-shadow: 11px 11px 9px #6e6c6c;
+}
+
+.data-container img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover
+}
+
+
+
+/* ===========================================Genral classes ===================================== */
+.active {
+    color: var(--redColor);
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+
+
+/* =======================================Responsev Media quereey================================= */
+
+@media screen and (min-width: 1200px) {
+    ul.list-auth {
+        flex-direction: row;
+        display: flex;
+        flex: 15px;
+        list-style: none;
+        position: absolute;
+        right: 12%;
+        margin: 0px;
+    }
+
+    .nav-dropDonw-responsev {
+        display: none;
+    }
+
+}
+
+
+/* labtop */
+@media screen and (max-width: 992px) {
+    ul.list-auth {
+        flex-direction: row;
+        display: flex;
+        flex: 15px;
+        list-style: none;
+        position: absolute;
+        right: 15%;
+        margin: 10px;
+    }
+
+    .nav-dropDonw-responsev {
+        display: none;
+    }
+
+}
+
+/* tablet */
+@media screen and (max-width: 768px) {
+
+    .navigator-in-page,
+    ul.list-auth,
+    .nav-dropdown {
+        display: none;
+    }
+
+    .nav-dropDonw-responsev {
+        display: block;
+    }
+}
+
+/* phones */
+@media screen and (max-width: 576px) {
+
+    .navigator-in-page,
+    ul.list-auth,
+    .nav-dropdown {
+        display: none;
+    }
+
+    .nav-dropDonw-responsev {
+        display: block;
+    }
+
+    .mycarousel-img {
+        margin: 50px 0px;
+        height: 200px;
+        overflow: hidden;
+        object-fit: fill;
+        opacity: var(--opictyVal);
+    }
+}

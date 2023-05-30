@@ -1,0 +1,82 @@
+<%- include('../partails/head'); %>
+<%- include('../partails/navbar'); %>
+<%- include('../partails/carousel'); %>
+<div> <!-- All realEstat data -->
+    <% if (listAds != null) { %>
+        <div class="container mainContanerAllReal">
+            <h1 class="realLan">Real Estates</h1>
+            <div class="row align-items-center">
+                <% listAds.forEach(function(item) { %>
+                    <% if (item.amainCatogry == '0') { %>
+                        <div class="col-lg-3 col-md-4 col-sm-12">
+                            <div class="data-container"> <img
+                                    src="<%= item.images[0] %>"
+                                    alt="ad img">
+                                <h5>
+                                    <%= item.details[0] %>
+                                </h5>
+                                <h6>
+                                    <%= item.details[2] + '' + item.details[3] %>
+                                </h6>
+                            </div>
+                        </div>
+                    <% } %>
+                    <% }); %>
+            </div>
+            <% } else { %>
+            <p> Not Allowed </p>
+    <% } %>
+</div>
+<div> <!-- All car dat -->
+    <% if (listAds != null) { %>
+        <div class="container mainContanerAllReal">
+            <h1 class="carLan">Vehicles</h1>
+            <div class="row align-items-center">
+                <% listAds.forEach(function(item) { %>
+                    <% if (item.amainCatogry == '1') { %>
+                        <div class="col-lg-3 col-md-4 col-sm-12">
+                            <div class="data-container"> <img
+                                    src="<%= item.images[0] %>"
+                                    alt="ad img">
+                                <h5>
+                                    <%= item.details[0] %>
+                                </h5>
+                                <h6>
+                                    <%= item.details[2] + '' + item.details[3] %>
+                                </h6>
+                            </div>
+                        </div>
+                    <% } %>
+                    <% }); %>
+            </div>
+            <% } else { %>
+            <p> Not Allowed </p>
+    <% } %>
+</div>
+<div> <!-- All Hotel data -->
+    <% if (listAds != null) { %>
+        <div class="container mainContanerAllReal">
+            <h1 class="hotelLan">Hotels</h1>
+            <div class="row align-items-center">
+                <% listAds.forEach(function(item) { %>
+                    <% if (item.amainCatogry == '2') { %>
+                        <div class="col-lg-3 col-md-4 col-sm-12">
+                            <div class="data-container"> <img
+                                    src="<%= item.images[0] %>"
+                                    alt="ad img">
+                                <h5>
+                                    <%= item.details[0] %>
+                                </h5>
+                                <h6>
+                                    <%= item.details[2] + '' + item.details[3] %>
+                                </h6>
+                            </div>
+                        </div>
+                    <% } %>
+                    <% }); %>
+            </div>
+            <% } else { %>
+            <p> Not Allowed </p>
+    <% } %>
+</div>
+<%- include('../partails/footer'); %>
