@@ -5,7 +5,6 @@ import { onSnapshot } from 'firebase/firestore';
 
 // this function for got all ads from ads collection in real time and render to home page
 function getAllAds(req, res) {
-    const listAllAds = [];
     const listAllRealEstate = [];
     const listAllViecahle = [];
     const listAllHotel = [];
@@ -14,23 +13,25 @@ function getAllAds(req, res) {
             querySnapshot.forEach((doc) => {
                 if (doc.data().amainCatogry == '0') {
                     listAllRealEstate.push(doc.data());
-                    listAllAds.push(doc.data());
+
 
                 } else if (doc.data().amainCatogry == '1') {
                     listAllViecahle.push(doc.data());
-                    listAllAds.push(doc.data());
+
 
                 } else {
                     listAllHotel.push(doc.data());
-                    listAllAds.push(doc.data());
+
 
                 }
 
             });
-            res.status(200).render('pages/index', { title: "Home", listAds: listAllAds });
-            console.log("home" + listAllRealEstate.length);
-            console.log("car" + listAllViecahle.length);
-            console.log("hotel" + listAllHotel.length);
+            res.status(200).render('pages/index', {
+                title: "Home",
+                realList: listAllRealEstate,
+                listAllCar: listAllViecahle,
+                listAllHotel: listAllHotel
+            });
         });
 
     } catch (ex) {

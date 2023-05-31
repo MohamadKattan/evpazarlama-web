@@ -2,7 +2,7 @@
 
 const overCarousel = () => {
     $('.carousel').carousel({
-        interval: 3000,
+        interval: 3500,
         pause: false
     });
 }

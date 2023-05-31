@@ -14,6 +14,8 @@ const navSingUp = $(".singUpLan");
 const navSingIn = $(".singInLan");
 const navLnguges = $(".LangugesLan");
 const mycarouselPargarfText = $(".mycarousel-p");
+const sorryText = $(".SorryLan");
+const noDataText = $(".noDataLan");
 
 
 
@@ -28,6 +30,8 @@ const englishLan = () => {
         navSingIn.text("Sign In");
         navLnguges.text("Language");
         mycarouselPargarfText.text(" Buying - Selling - Renting ");
+        sorryText.text("Sorry!");
+        noDataText.text(" No Data yet...");
     });
 }
 
@@ -43,6 +47,8 @@ const aribcLan = () => {
         navSingIn.text("تسجيل الدخول");
         navLnguges.text("لغة");
         mycarouselPargarfText.text(" شراء - بيع - تأجير ");
+        sorryText.text("معذرة!");
+        noDataText.text("لا توجد بيانات حتى الآن ...");
     });
 }
 
@@ -58,6 +64,8 @@ const turkishLan = () => {
         navSingIn.text("Giriş Yap");
         navLnguges.text("Dil");
         mycarouselPargarfText.text(" Alım - satım - kiralama ");
+        sorryText.text("Üzgünüm!");
+        noDataText.text("Henüz Veri Yok...");
     });
 }
 
