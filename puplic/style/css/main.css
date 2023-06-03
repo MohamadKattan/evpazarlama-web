@@ -7,14 +7,14 @@
     --blackColor: rgb(22, 20, 20);
     --whiteColor: rgb(255, 255, 255);
     --grayColer: #b3b0b0e0;
-    --goldColor: rgba(198, 225, 178, 0.836);
-    --redColor: rgb(0, 174, 255);
+    --goldColor: #29b59cd5;
+    --redColor: rgb(241, 0, 161);
     --fullwidth: 100%;
     --opictyVal: 0.8;
 }
 
 body {
-    background-color: rgb(238, 232, 232)
+    background-color: rgb(240, 213, 238)
 }
 
 /*========================start all nav bar contact==============================*/
@@ -268,8 +268,8 @@ div.nav-dropdown:hover .dropbtn {
 /* =========================================cStart ustom Carousel=============================== */
 
 .mycarousel-img {
-    margin: 30px 0px;
-    height: 500px;
+    margin-top: 35px;
+    height: 400px;
     overflow: hidden;
     object-fit: fill;
     opacity: var(--opictyVal);
@@ -279,12 +279,15 @@ div.nav-dropdown:hover .dropbtn {
 
 .mycarousel-h3 {
     color: var(--redColor);
+    font-size: 35px;
+    font-weight: bold;
     transition: 400ms;
 }
 
 .mycarousel-p {
-    color: var(--blackColor);
+    color: var(--goldColor);
     font-weight: bold;
+    font-size: 24px;
     transition: 400ms;
 }
 
@@ -341,6 +344,46 @@ div.nav-dropdown:hover .dropbtn {
     font-size: 150px;
     padding: 24;
     margin: 12px;
+}
+
+/* ============================================dailog=========================================== */
+.showDailoge {
+    position: fixed;
+    z-index: 3;
+    top: 10%;
+    margin: auto;
+    right: 25%;
+    left: 25%;
+    width: 40%;
+    background-color: var(--whiteColor);
+    padding: 8px;
+    align-items: center;
+    border-radius: 12px;
+}
+
+.ad-number {
+    font-size: 1.5rem;
+    text-align: center;
+    color: firebrick;
+}
+
+.img-info {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    margin: 2px;
+}
+
+.adress-info,.details-info{
+    padding: inherit;
+    font-size: 16px;
+    font-weight: bold;
+    color: darkcyan;
+}
+.details-price{
+    color: green;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 
@@ -446,6 +489,12 @@ div.nav-dropdown:hover .dropbtn {
     .nav-dropDonw-responsev {
         display: block;
     }
+
+    .showDailoge {
+        top: 15%;
+        left: 13%;
+        width: 70%;
+    }
 }
 
 /* phones */
@@ -467,5 +516,11 @@ div.nav-dropdown:hover .dropbtn {
         overflow: hidden;
         object-fit: fill;
         opacity: var(--opictyVal);
+    }
+
+    .showDailoge {
+        top: 15%;
+        left: 15%;
+        width: 70%;
     }
 }

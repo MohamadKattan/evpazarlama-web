@@ -1,6 +1,7 @@
 <%- include('../partails/head'); %>
 <%- include('../partails/navbar'); %>
 <%- include('../partails/carousel'); %>
+<div class="dailoge"></div>
 <div> <!-- All realEstat data -->
     <% if (realList != null) { %>
         <div id="real" class="container mainContanerAllReal">
@@ -8,9 +9,10 @@
             <div class="row align-items-center">
                 <% realList.forEach(function(item) { %>
                     <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-                        <div class="data-container"> <img
-                                src="<%= item.images[0] %>"
-                                alt="ad img">
+                        <div class="data-container"> <a class="data-dailoge"
+                                data-item="<%= item.sitting.adsId %>">
+                                <img src="<%= item.images[0] %>"
+                                    alt="ad img"> </a>
                             <h5>
                                 <%= item.details[0] %>
                             </h5>
@@ -32,9 +34,10 @@
             <div class="row align-items-center">
                 <% listAllCar.forEach(function(item) { %>
                     <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-                        <div class="data-container"> <img
-                                src="<%= item.images[0] %>"
-                                alt="ad img">
+                        <div class="data-container"> <a class="data-dailoge"
+                                data-item="<%= item.sitting.adsId %>">
+                                <img src="<%= item.images[0] %>"
+                                    alt="ad img"> </a>
                             <h5>
                                 <%= item.details[0] %>
                             </h5>
@@ -56,9 +59,10 @@
             <div class="row align-items-center">
                 <% listAllHotel.forEach(function(item) { %>
                     <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-                        <div class="data-container"> <img
-                                src="<%= item.images[0] %>"
-                                alt="ad img">
+                        <div class="data-container"> <a class="data-dailoge"
+                                data-item="<%= item.sitting.adsId %>">
+                                <img src="<%= item.images[0] %>"
+                                    alt="ad img"> </a>
                             <h5>
                                 <%= item.details[0] %>
                             </h5>

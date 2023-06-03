@@ -3,7 +3,7 @@ import morgan from 'morgan';
 import route from './routing/routing.js';
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 
 // server 
