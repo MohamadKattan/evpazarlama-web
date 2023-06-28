@@ -31,8 +31,18 @@ const gotAdID = function () {
         }
     });
 }
+
+
 // this method for append a dailoge 
 const appendDailoge = (data) => {
+    const lan = localStorage.getItem("lan");
+    let moreDetails;
+    if (lan == 'ar') {
+        moreDetails = 'المزيد من التفاصيل'
+    } else if (moreDetails == 'tr') {
+        moreDetails = 'daha fazla detay'
+    }
+    else { moreDetails = 'More details' }
     if (!isDailogeOpened) {
         isDailogeOpened = true;
         const dailogeDiv = $("<div class = 'showDailoge'></div>");
@@ -42,15 +52,23 @@ const appendDailoge = (data) => {
         const adressInfo = $("<p class = 'adress-info'></p>").text('Adress : ' + data.adress);
         const titleInfo = $("<p class = 'details-info'></p>").text(data.title[0] + ' : ' + data.details[0]);
         const priceInfo = $("<p class = 'details-price'></p>").text(data.title[2] + ' : ' + data.details[2] + data.details[3]);
+        const divdetailAd = $("<div class = 'divlinkdetailAd'></div>");
+        const linkdetailAd = $("<a>More details</a>")
+            .text(moreDetails)
+            .attr("href", `${urlRoutingServer.datailsAd}${data.adsNumber}`);
+        divdetailAd.append(linkdetailAd);
         dailogeDiv.append(closeIcon);
         dailogeDiv.append(adsNumberInfo);
         dailogeDiv.append(imgInfo);
         dailogeDiv.append(titleInfo);
         dailogeDiv.append(adressInfo);
         dailogeDiv.append(priceInfo);
+        dailogeDiv.append(divdetailAd);
         containerDailoge.append(dailogeDiv);
     }
 }
+
+
 
 // this method for close dailoge 
 const closeDailogeOneAd = () => {

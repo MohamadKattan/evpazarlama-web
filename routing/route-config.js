@@ -1,6 +1,8 @@
 const urlRoutekey = {
     home: "/",
-    oneAd: "/onead"
+    oneAd: "/onead",
+    allAds:"/moreAds",
+    datailsAd:"/datailsAd"
 }
 
 

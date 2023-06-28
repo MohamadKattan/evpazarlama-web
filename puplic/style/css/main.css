@@ -7,7 +7,8 @@
     --blackColor: rgb(22, 20, 20);
     --whiteColor: rgb(255, 255, 255);
     --grayColer: #b3b0b0e0;
-    --goldColor: #29b59cd5;
+    --containerCardColor: #e0d7d7;
+    --greenColor: #58e4cad5;
     --redColor: rgb(241, 0, 161);
     --fullwidth: 100%;
     --opictyVal: 0.8;
@@ -39,7 +40,7 @@ div.main-nav {
 /* brand contnet */
 .brand {
     margin: unset;
-    color: var(--goldColor);
+    color: var(--greenColor);
     font-size: 20px;
     font-style: italic;
     font-weight: bold;
@@ -67,7 +68,7 @@ div.main-nav {
 }
 
 .nav-link:hover {
-    color: var(--goldColor);
+    color: var(--greenColor);
 }
 
 /* list auth */
@@ -90,7 +91,7 @@ a.auth-link {
 }
 
 a.auth-link:hover {
-    color: var(--goldColor);
+    color: var(--greenColor);
 }
 
 /* drop Button languges whith his contact*/
@@ -101,7 +102,7 @@ div.nav-dropdown {
 }
 
 div.nav-dropdown:hover .dropbtn {
-    color: var(--goldColor)
+    color: var(--greenColor)
 }
 
 .dropbtn {
@@ -148,9 +149,9 @@ div.nav-dropdown:hover .dropbtn {
 }
 
 .dropdown-content a:hover {
-    color: var(--goldColor);
+    color: var(--greenColor);
     padding-left: 16px;
-    border-bottom: solid 1px var(--goldColor);
+    border-bottom: solid 1px var(--greenColor);
 }
 
 /* dropDown  include all buttons in navBar for tablet and phones */
@@ -180,12 +181,12 @@ div.nav-dropdown:hover .dropbtn {
 }
 
 .icon-bars:hover {
-    background-color: var(--goldColor);
+    background-color: var(--greenColor);
 }
 
 .fa-bars {
     font-weight: 900;
-    color: var(--goldColor);
+    color: var(--greenColor);
     margin: 0px;
     font-size: 18px;
     padding: 8px;
@@ -216,13 +217,13 @@ div.nav-dropdown:hover .dropbtn {
 .nav-dD-rv-ct-link:hover {
     display: block;
     text-decoration: none;
-    color: var(--goldColor);
+    color: var(--greenColor);
     padding: 4px 18px;
 }
 
 .nav--span-dropDonw {
 
-    border-top: 1.5px solid var(--goldColor);
+    border-top: 1.5px solid var(--greenColor);
     height: 3px;
     width: 100vw;
     display: block;
@@ -240,7 +241,7 @@ div.nav-dropdown:hover .dropbtn {
 }
 
 .btn-lan-rv:hover {
-    color: var(--goldColor);
+    color: var(--greenColor);
     padding: 9px 12px;
     display: block;
 }
@@ -269,7 +270,7 @@ div.nav-dropdown:hover .dropbtn {
 
 .mycarousel-img {
     margin-top: 35px;
-    height: 400px;
+    height: 500px;
     overflow: hidden;
     object-fit: fill;
     opacity: var(--opictyVal);
@@ -285,17 +286,17 @@ div.nav-dropdown:hover .dropbtn {
 }
 
 .mycarousel-p {
-    color: var(--goldColor);
+    color: var(--greenColor);
     font-weight: bold;
     font-size: 24px;
     transition: 400ms;
 }
 
 
-/* ====================================== data card  in index page============================== */
+/* ====================================== data card in index page ============================== */
 
 .mainContanerAllReal {
-    background-color: var(--goldColor);
+    background-color: var(--containerCardColor);
     margin-top: 35px;
     margin-bottom: 35px;
     border-radius: 12px;
@@ -305,7 +306,7 @@ div.nav-dropdown:hover .dropbtn {
     color: var(--redColor);
     text-align: center;
     margin-bottom: 8px;
-    border-bottom: 2px solid var(--goldColor);
+    border-bottom: 2px solid var(--greenColor);
 }
 
 .data-container {
@@ -331,7 +332,7 @@ div.nav-dropdown:hover .dropbtn {
 }
 
 .nodata {
-    background-color: var(--goldColor);
+    background-color: var(--greenColor);
     margin-top: 35px;
     margin-bottom: 35px;
     border-radius: 12px;
@@ -346,7 +347,38 @@ div.nav-dropdown:hover .dropbtn {
     margin: 12px;
 }
 
-/* ============================================dailog=========================================== */
+.moreAd {
+    background-color: var(--redColor);
+    width: 120px;
+    padding: 8px;
+    margin: 8px 88%;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    bottom: 5px;
+    transition: 500ms;
+}
+
+.moreAd:hover {
+    background-color: var(--whiteColor);
+    bottom: 8px;
+    margin: 8px 89%;
+}
+
+.moreAd a {
+    color: var(--whiteColor);
+    padding: 8px;
+    text-decoration: none;
+    text-align: center;
+    transition: 500ms;
+}
+
+
+.moreAd a:hover {
+    color: var(--redColor);
+}
+
+/* ============================================dailog one ad =========================================== */
 .showDailoge {
     position: fixed;
     z-index: 3;
@@ -374,16 +406,45 @@ div.nav-dropdown:hover .dropbtn {
     margin: 2px;
 }
 
-.adress-info,.details-info{
+.adress-info,
+.details-info {
     padding: inherit;
     font-size: 16px;
     font-weight: bold;
     color: darkcyan;
 }
-.details-price{
-    color: green;
-    font-size: 18px;
+
+.details-price {
+    padding: inherit;
+    color: darkcyan;
+    font-size: 16px;
     font-weight: bold;
+}
+
+.divlinkdetailAd {
+    background-color: var(--redColor);
+    width: fit-content;
+    padding: 8px;
+    border-radius: 8px;
+    margin: auto;
+    text-align: center;
+    transition: 500ms;
+}
+
+.divlinkdetailAd a{
+    color: var(--whiteColor);
+    text-decoration: none;
+    transition: 500ms;
+}
+
+.divlinkdetailAd:hover{
+    background-color: var(--greenColor);
+    color: var(--redColor);
+}
+
+.divlinkdetailAd a:hover{
+    color: var(--redColor);
+
 }
 
 
@@ -423,7 +484,7 @@ div.nav-dropdown:hover .dropbtn {
 }
 
 .footer i:hover {
-    color: var(--goldColor);
+    color: var(--greenColor);
     font-size: 32px;
 
 }
@@ -495,7 +556,17 @@ div.nav-dropdown:hover .dropbtn {
         left: 13%;
         width: 70%;
     }
+
+    .moreAd {
+        margin: 8px 85%;
+    }
+
+
+    .divlinkdetailAd {
+        margin-left: 0px;
+    }
 }
+
 
 /* phones */
 @media screen and (max-width: 576px) {
@@ -522,5 +593,9 @@ div.nav-dropdown:hover .dropbtn {
         top: 15%;
         left: 15%;
         width: 70%;
+    }
+
+    .moreAd {
+        margin: 8px 70%;
     }
 }

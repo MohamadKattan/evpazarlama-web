@@ -1,3 +1,4 @@
+<!-- ===========Home page================ -->
 <%- include('../partails/head'); %>
 <%- include('../partails/navbar'); %>
 <%- include('../partails/carousel'); %>
@@ -22,6 +23,9 @@
                         </div>
                     </div>
                     <% }); %>
+            </div>
+            <div class="moreAd"> <a
+                    href="http://localhost:3001/moreAds?cat=real">MoreAds</a>
             </div>
             <% } else { %>
             <%- include('../partails/nodata'); %>
@@ -48,6 +52,9 @@
                     </div>
                     <% }); %>
             </div>
+            <div class="moreAd"> <a
+                    href="http://localhost:3001/moreAds?cat=car">MoreAds</a>
+            </div>
             <% } else { %>
             <%- include('../partails/nodata'); %>
     <% } %>
@@ -72,6 +79,9 @@
                         </div>
                     </div>
                     <% }); %>
+            </div>
+            <div class="moreAd"> <a
+                    href="http://localhost:3001/moreAds?cat=hotel">More Ads</a>
             </div>
             <% } else { %>
             <%- include('../partails/nodata'); %>

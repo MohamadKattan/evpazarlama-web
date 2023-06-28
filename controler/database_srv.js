@@ -1,5 +1,6 @@
 import { allAdsCollection } from '../config/config-app.js';
 import { onSnapshot } from 'firebase/firestore';
+
 let listGenerleAllAds = [];
 let listAllRealEstate = [];
 let listAllViecahle = [];
@@ -25,21 +26,19 @@ function getAllAds(req, res) {
 
                 } else {
                     listAllHotel.push(doc.data());
-
-
                 }
 
             });
             res.status(200).render('pages/index', {
                 title: "Home",
-                realList: listAllRealEstate,
-                listAllCar: listAllViecahle,
-                listAllHotel: listAllHotel
+                realList: listAllRealEstate.length <= 20 ? listAllRealEstate : listAllRealEstate.slice(0, 20),
+                listAllCar: listAllViecahle.length <= 20 ? listAllViecahle : listAllViecahle.slice(0, 20),
+                listAllHotel: listAllHotel.length <= 20 ? listAllHotel : listAllHotel.slice(0, 20)
             });
         });
 
     } catch (ex) {
-        res.status(404).send('Some thing went wrong try again !!' + ex);
+        res.status(400).send(`some thing went wrong ${ex}`);
     }
 }
 
@@ -56,9 +55,47 @@ function getQueryOneAd(req, res) {
             }
         }
     } catch (ex) {
-        res.status(404).send('Some thing went wrong try again !!' + ex);
+        res.status(400).send(`some thing went wrong ${ex}`);
     }
 }
 
+// this method for rander to page all ads of on type from list more than 20
+function getAadsMoreThan20(req, res) {
 
-export { getAllAds, getQueryOneAd }
+    try {
+        const catogary = req.query.cat;
+        if (catogary == 'real') {
+            res.status(200).render('pages/all_ads', { title: "All RealEstate", list: listAllRealEstate });
+        } else if (catogary == 'car') {
+            res.status(200).render('pages/all_ads', { title: "All Vehicles", list: listAllViecahle });
+        } else {
+            res.status(200).render('pages/all_ads', { title: "All Hotels", list: listAllHotel });
+        }
+
+    } catch (ex) {
+        res.status(400).send(`some thing went wrong ${ex}`);
+    }
+}
+// this method for display all details one ad from moreDetaols btn in dailoge
+function getDetailsAd(req, res) {
+    try {
+        const adNumber = req.query.id;
+        if (adNumber != null) {
+            for (var i = 0; i < listGenerleAllAds.length; i++) {
+                if (listGenerleAllAds[i]['adsNumber'] == adNumber) {
+                    res.status(200).render('pages/details_ad', { title: "Details ad", data: listGenerleAllAds[i] });
+                    break;
+                }
+            }
+        }
+        else {
+            return;
+        }
+    } catch (ex) {
+        res.status(400).send(`some thing went wrong ${ex}`);
+    }
+
+}
+
+
+export { getAllAds, getQueryOneAd, getAadsMoreThan20, getDetailsAd }
