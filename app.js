@@ -33,7 +33,6 @@ const jsonParserMiddleware = async (req, res, next) => {
 
 app.use(jsonParserMiddleware);
 
-
 // routeing 
 app.use('/', route);
 // error response

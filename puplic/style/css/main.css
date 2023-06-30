@@ -378,6 +378,19 @@ div.nav-dropdown:hover .dropbtn {
     color: var(--redColor);
 }
 
+/* ============================================ Fillter =============================================== */
+.fillter-form{
+    background-color: var(--containerCardColor);
+    height: 400px;
+    margin: 16px auto;
+    padding: 24px;
+    text-align: center;
+}
+.fillter-form h3{
+    margin: auto;
+    padding: 12px;
+    color: var(--greenColor);
+}
 /* ============================================dailog one ad =========================================== */
 .showDailoge {
     position: fixed;

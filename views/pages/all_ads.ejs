@@ -3,35 +3,54 @@
 <%- include('../partails/secondrynav'); %>
 <%- include('../partails/carousel'); %>
 <div class="dailoge"></div>
-<div>
-    <% if (list != null) { %>
-        <div class="container mainContanerAllReal">
-            <% if (title == 'All RealEstate') { %>
-                <h1 class="realLan">Real Estates</h1>
-                <% } else if (title == 'All Vehicles') { %>
-                    <h1 class="carLan">Vehicles</h1>
-                    <% } else { %>
-                    <h1 class="hotelLan">Hotels</h1>
-                <% } %>
-                <div class="row align-items-center">
-                    <% list.forEach(function(item) { %>
-                        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-                            <div class="data-container"> <a class="data-dailoge"
-                                    data-item="<%= item.sitting.adsId %>">
-                                    <img src="<%= item.images[0] %>"
-                                        alt="ad img"> </a>
-                                <h5>
-                                    <%= item.details[0] %>
-                                </h5>
-                                <h6>
-                                    <%= item.details[2] + '' + item.details[3] %>
-                                </h6>
-                            </div>
-                        </div>
-                        <% }); %>
-                </div>
+<div class="container fillter-form">
+    <h3>Filter</h3>
+    <form action="/">
+         <label for="contry">Country</label>
+          <input type="text" id="contry" name="contry" value="Contry" disabled>
+          <label for="city">City</label>
+          <input type="text" id="city" name="city"value="City" disabled><br>
+          <label for="minPrice">Minimum price</label>
+          <input type="text" id="minPrice" name="minPrice"value="Minimum price">
+          <label for="maxPrice">Max price</label>
+          <input type="text" id="maxPrice" name="maxPrice" value="Max price"><br>
+          <label for="choose-operation">Operation</label>
+          <select name="choose-operation" id="choose-operation">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+        </select>
+     </form>
+</div>
+<% if (list != null) { %>
+    <div class="container mainContanerAllReal">
+        <% if (title == 'All RealEstate') { %>
+            <h1 class="realLan">Real Estates</h1>
+            <% } else if (title == 'All Vehicles') { %>
+                <h1 class="carLan">Vehicles</h1>
                 <% } else { %>
-                <%- include('../partails/nodata'); %>
+                <h1 class="hotelLan">Hotels</h1>
             <% } %>
-        </div>
-        <%- include('../partails/footer'); %>
+            <div class="row align-items-center">
+                <% list.forEach(function(item) { %>
+                    <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                        <div class="data-container"> <a class="data-dailoge"
+                                data-item="<%= item.sitting.adsId %>">
+                                <img src="<%= item.images[0] %>"
+                                    alt="ad img"> </a>
+                            <h5>
+                                <%= item.details[0] %>
+                            </h5>
+                            <h6>
+                                <%= item.details[2] + '' + item.details[3] %>
+                            </h6>
+                        </div>
+                    </div>
+                    <% }); %>
+            </div>
+            <% } else { %>
+            <%- include('../partails/nodata'); %>
+        <% } %>
+    </div>
+    <%- include('../partails/footer'); %>
